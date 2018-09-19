@@ -28,14 +28,14 @@ public class RedisBackedCacheTest {
     @Test
     public void it_should_find_inserted_value_from_cache_by_key_name() {
         //Arrange
-        cache.put("foo", "FOO");
+        cache.put("coders", "Enes Açıkoğlu");
 
         //Act
-        Optional<String> foundObject = cache.get("foo", String.class);
+        Optional<String> foundObject = cache.get("coders", String.class);
 
         //Assert
         assertThat(foundObject).isPresent();
-        assertThat(foundObject.get()).isEqualTo("FOO");
+        assertThat(foundObject.get()).isEqualTo("Enes Açıkoğlu");
     }
 
     @Test
@@ -43,7 +43,7 @@ public class RedisBackedCacheTest {
         //Arrange
 
         //Act
-        Optional<String> foundObject = cache.get("bar", String.class);
+        Optional<String> foundObject = cache.get("software-craftsmanship", String.class);
 
         //Assert
         assertThat(foundObject).isNotPresent();
